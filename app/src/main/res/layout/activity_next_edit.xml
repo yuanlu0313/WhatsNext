@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"/>
+
+        <EditText
+            android:id="@+id/edit_next_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:textSize="@dimen/todo_edit_font_size"
+            android:hint="What's Next"
+            tools:text="todo1"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/edit_next_fab_save"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/spacing_medium"
+        android:src="@drawable/ic_check_white_24dp"
+        android:clickable="true"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="bottom|end" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/todo_edit_body_margin_top"
+        android:padding="@dimen/spacing_medium"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/edit_next_check_complete_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground">
+
+            <CheckBox
+                android:id="@+id/edit_next_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4.5dp"
+                android:layout_marginRight="@dimen/spacing_xsmall"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completed"
+                android:textSize="@dimen/todo_edit_body_font_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_24dp"
+                android:layout_height="@dimen/icon_24dp"
+                android:src="@drawable/ic_alarm_black_24dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/edit_next_date_select"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/spacing_medium"
+                android:textSize="@dimen/todo_edit_body_font_size"
+                android:background="?attr/selectableItemBackground"
+                tools:text="Wed, Jan 27, 2017"/>
+
+            <TextView
+                android:id="@+id/edit_next_time_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_medium"
+                android:textSize="@dimen/todo_edit_body_font_size"
+                android:background="?attr/selectableItemBackground"
+                tools:text="20:00"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/edit_next_delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="Delete"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            style="@style/AppTheme.TextView.DeleteButton"/>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
